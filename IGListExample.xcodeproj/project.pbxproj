@@ -3,27 +3,47 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1B5F59A04AFED12DA114D0EF /* Pods_IGListExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 767FDDB8691D39B3A95FD42E /* Pods_IGListExample.framework */; };
+		6986B8E824324BB000F77E35 /* PreventCovid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6986B8E724324BB000F77E35 /* PreventCovid.swift */; };
+		6986B8EB243251E100F77E35 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6986B8EA243251E100F77E35 /* HomeViewModel.swift */; };
 		6987FA00242EF8640090E206 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987F9FF242EF8640090E206 /* AppDelegate.swift */; };
 		6987FA02242EF8640090E206 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987FA01242EF8640090E206 /* SceneDelegate.swift */; };
 		6987FA09242EF86A0090E206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6987FA08242EF86A0090E206 /* Assets.xcassets */; };
 		6987FA0C242EF86A0090E206 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6987FA0A242EF86A0090E206 /* LaunchScreen.storyboard */; };
-		6987FA14242EFB300090E206 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987FA13242EFB300090E206 /* MainViewController.swift */; };
+		6987FA18242F12040090E206 /* UIViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987FA17242F12040090E206 /* UIViewController+NavigationBar.swift */; };
+		69CB2AE0243020CD00CA6B82 /* HomeSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB2ADF243020CD00CA6B82 /* HomeSectionController.swift */; };
+		69CB2AE2243026CF00CA6B82 /* EmbedPreventCovid19SC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB2AE1243026CF00CA6B82 /* EmbedPreventCovid19SC.swift */; };
+		69CB2AE72430282100CA6B82 /* PreventCovid19Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB2AE52430282100CA6B82 /* PreventCovid19Cell.swift */; };
+		69CB2AE82430282100CA6B82 /* PreventCovid19Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69CB2AE62430282100CA6B82 /* PreventCovid19Cell.xib */; };
+		69CB2AEF24306A2B00CA6B82 /* HomePreventCovidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB2AED24306A2B00CA6B82 /* HomePreventCovidCell.swift */; };
+		69CB2AF024306A2B00CA6B82 /* HomePreventCovidCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69CB2AEE24306A2B00CA6B82 /* HomePreventCovidCell.xib */; };
+		69EFD2B4242FADF400D66148 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EFD2B2242FADF400D66148 /* HomeViewController.swift */; };
+		69EFD2B5242FADF400D66148 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69EFD2B3242FADF400D66148 /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		26117A273B6C1FC6096E3ED9 /* Pods-IGListExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IGListExample.debug.xcconfig"; path = "Target Support Files/Pods-IGListExample/Pods-IGListExample.debug.xcconfig"; sourceTree = "<group>"; };
+		6986B8E724324BB000F77E35 /* PreventCovid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventCovid.swift; sourceTree = "<group>"; };
+		6986B8EA243251E100F77E35 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		6987F9FC242EF8640090E206 /* IGListExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IGListExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6987F9FF242EF8640090E206 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6987FA01242EF8640090E206 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6987FA08242EF86A0090E206 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6987FA0B242EF86A0090E206 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6987FA0D242EF86A0090E206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6987FA13242EFB300090E206 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		6987FA17242F12040090E206 /* UIViewController+NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBar.swift"; sourceTree = "<group>"; };
+		69CB2ADF243020CD00CA6B82 /* HomeSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionController.swift; sourceTree = "<group>"; };
+		69CB2AE1243026CF00CA6B82 /* EmbedPreventCovid19SC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbedPreventCovid19SC.swift; sourceTree = "<group>"; };
+		69CB2AE52430282100CA6B82 /* PreventCovid19Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventCovid19Cell.swift; sourceTree = "<group>"; };
+		69CB2AE62430282100CA6B82 /* PreventCovid19Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreventCovid19Cell.xib; sourceTree = "<group>"; };
+		69CB2AED24306A2B00CA6B82 /* HomePreventCovidCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePreventCovidCell.swift; sourceTree = "<group>"; };
+		69CB2AEE24306A2B00CA6B82 /* HomePreventCovidCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePreventCovidCell.xib; sourceTree = "<group>"; };
+		69EFD2B2242FADF400D66148 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		69EFD2B3242FADF400D66148 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		767FDDB8691D39B3A95FD42E /* Pods_IGListExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IGListExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B108D72D0872C001F28F98B9 /* Pods-IGListExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IGListExample.release.xcconfig"; path = "Target Support Files/Pods-IGListExample/Pods-IGListExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,6 +68,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6986B8E424324B7800F77E35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6986B8E724324BB000F77E35 /* PreventCovid.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6986B8E9243251CD00F77E35 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6986B8EA243251E100F77E35 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		6987F9F3242EF8640090E206 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +105,10 @@
 		6987F9FE242EF8640090E206 /* IGListExample */ = {
 			isa = PBXGroup;
 			children = (
+				6986B8E9243251CD00F77E35 /* ViewModel */,
+				6986B8E424324B7800F77E35 /* Model */,
+				69CB2AE3243027F800CA6B82 /* Views */,
+				6987FA16242F11E50090E206 /* Extensions */,
 				6987FA15242EFB500090E206 /* ViewControllers */,
 				6987F9FF242EF8640090E206 /* AppDelegate.swift */,
 				6987FA01242EF8640090E206 /* SceneDelegate.swift */,
@@ -82,9 +122,39 @@
 		6987FA15242EFB500090E206 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				6987FA13242EFB300090E206 /* MainViewController.swift */,
+				69EFD2B2242FADF400D66148 /* HomeViewController.swift */,
+				69EFD2B3242FADF400D66148 /* HomeViewController.xib */,
+				69CB2ADF243020CD00CA6B82 /* HomeSectionController.swift */,
+				69CB2AE1243026CF00CA6B82 /* EmbedPreventCovid19SC.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6987FA16242F11E50090E206 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6987FA17242F12040090E206 /* UIViewController+NavigationBar.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		69CB2AE3243027F800CA6B82 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				69CB2AE4243027FD00CA6B82 /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		69CB2AE4243027FD00CA6B82 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				69CB2AE52430282100CA6B82 /* PreventCovid19Cell.swift */,
+				69CB2AE62430282100CA6B82 /* PreventCovid19Cell.xib */,
+				69CB2AED24306A2B00CA6B82 /* HomePreventCovidCell.swift */,
+				69CB2AEE24306A2B00CA6B82 /* HomePreventCovidCell.xib */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		FF7A0E019D3953EDFCDB0272 /* Pods */ = {
@@ -93,7 +163,6 @@
 				26117A273B6C1FC6096E3ED9 /* Pods-IGListExample.debug.xcconfig */,
 				B108D72D0872C001F28F98B9 /* Pods-IGListExample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -158,6 +227,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6987FA0C242EF86A0090E206 /* LaunchScreen.storyboard in Resources */,
+				69EFD2B5242FADF400D66148 /* HomeViewController.xib in Resources */,
+				69CB2AE82430282100CA6B82 /* PreventCovid19Cell.xib in Resources */,
+				69CB2AF024306A2B00CA6B82 /* HomePreventCovidCell.xib in Resources */,
 				6987FA09242EF86A0090E206 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,9 +283,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6987FA14242EFB300090E206 /* MainViewController.swift in Sources */,
+				6987FA18242F12040090E206 /* UIViewController+NavigationBar.swift in Sources */,
+				69CB2AE72430282100CA6B82 /* PreventCovid19Cell.swift in Sources */,
 				6987FA00242EF8640090E206 /* AppDelegate.swift in Sources */,
+				6986B8EB243251E100F77E35 /* HomeViewModel.swift in Sources */,
+				69CB2AE2243026CF00CA6B82 /* EmbedPreventCovid19SC.swift in Sources */,
 				6987FA02242EF8640090E206 /* SceneDelegate.swift in Sources */,
+				69CB2AE0243020CD00CA6B82 /* HomeSectionController.swift in Sources */,
+				6986B8E824324BB000F77E35 /* PreventCovid.swift in Sources */,
+				69EFD2B4242FADF400D66148 /* HomeViewController.swift in Sources */,
+				69CB2AEF24306A2B00CA6B82 /* HomePreventCovidCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
