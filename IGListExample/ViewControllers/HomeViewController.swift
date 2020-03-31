@@ -24,12 +24,29 @@ class HomeViewController: UIViewController, ListAdapterDataSource {
         setupView()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.navigationBar.barStyle = .black
+    }
+    
     private func setupView() {
-        setNavTitle(withTitle: "")
+        setupNavBar()
         collectionView.backgroundColor = .yellow
         innerView.addSubview(collectionView)
         adapter.collectionView = self.collectionView
         adapter.dataSource = self
+    }
+    
+    private func setupNavBar() {
+        setNavTitle(withTitle: "")
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(named: "BluePrimary")
+        // Hide underline
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     override func viewDidLayoutSubviews() {

@@ -1,5 +1,5 @@
 //
-//  PreventCovid19Cell.swift
+//  HomePreventCovidItemCell.swift
 //  IGListExample
 //
 //  Created by Rohmat Suseno on 29/03/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PreventCovid19Cell: UICollectionViewCell {
+class HomePreventCovidItemCell: UICollectionViewCell {
 
     @IBOutlet weak var icon: UIView!
     @IBOutlet weak var titleLabel: UILabel!

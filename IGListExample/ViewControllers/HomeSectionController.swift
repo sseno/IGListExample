@@ -11,6 +11,8 @@ import IGListKit
 
 enum HomeSection: String {
     case preventCovid19
+    case requirements
+    case news
 }
 
 class HomeMenuPreventCovid: ListDiffable {
@@ -53,12 +55,18 @@ class HomeSectionController: ListSectionController, ListAdapterDataSource {
     }
     
     override func sizeForItem(at index: Int) -> CGSize {
+        let width = collectionContext!.containerSize.width
         switch object {
         case .preventCovid19:
-            let width = collectionContext!.containerSize.width
             return CGSize(width: width, height: width + 50)
+        case .requirements:
+            let height = (collectionContext!.containerSize.width / 4) + 86.5 // 190
+            return CGSize(width: width, height: height)
+        case .news:
+            let height = (collectionContext!.containerSize.width / 1.5) - 6 // 270
+            return CGSize(width: width, height: height - 50)
         default:
-            return CGSize(width: collectionContext!.containerSize.width, height: 60)
+            return CGSize(width: width, height: 60)
         }
     }
     
@@ -73,6 +81,25 @@ class HomeSectionController: ListSectionController, ListAdapterDataSource {
             }
             adapter.collectionView = cell.collectionView
             cell.titleLabel.text = "Prevent COVID - 19"
+            return cell
+        case .requirements:
+            guard let cell = collectionContext?.dequeueReusableCell(withNibName: "HomeRequirementsCell",
+                                                                    bundle: nil,
+                                                                    for: self,
+                                                                    at: index) as? HomeRequirementsCell else {
+                                                                        fatalError()
+            }
+            adapter.collectionView = cell.collectionView
+            cell.titleLabel.text = "Requirements"
+            return cell
+        case .news:
+            guard let cell = collectionContext?.dequeueReusableCell(withNibName: "HomeNewsCell",
+                                                                    bundle: nil,
+                                                                    for: self,
+                                                                    at: index) as? HomeNewsCell else {
+                                                                        fatalError()
+            }
+            adapter.collectionView = cell.collectionView
             return cell
         default:
             guard let cell = collectionContext?.dequeueReusableCell(withNibName: "HomePreventCovidCell",
@@ -89,6 +116,12 @@ class HomeSectionController: ListSectionController, ListAdapterDataSource {
         switch object {
         case .preventCovid19:
             return self.items as! [ListDiffable]
+        case .requirements:
+            guard let number = vm?.dataRequirementsCount() else { return [] }
+            return (0..<number).map{ $0 as ListDiffable }
+        case .news:
+            guard let number = vm?.dataNewsCount() else { return [] }
+            return (0..<number).map{ $0 as ListDiffable }
         default:
             return []
         }
@@ -97,11 +130,19 @@ class HomeSectionController: ListSectionController, ListAdapterDataSource {
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
         switch self.object {
         case .preventCovid19:
-            let vc = EmbedPreventCovid19SC()
+            let vc = EmbedPreventCovidSC()
             vc.homeMenu = self.homeMenu
             return vc
+        case .requirements:
+            let vc = EmbedRequirementsSC()
+            vc.data = self.vm?.dataRequirements
+            return vc
+        case .news:
+            let vc = EmbedNewsSC()
+            vc.data = self.vm?.dataNews
+            return vc
         default:
-            let vc = EmbedPreventCovid19SC()
+            let vc = EmbedPreventCovidSC()
             vc.homeMenu = self.homeMenu
             return vc
         }

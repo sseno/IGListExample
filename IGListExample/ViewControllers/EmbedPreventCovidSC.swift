@@ -1,5 +1,5 @@
 //
-//  EmbedPreventCovid19SC.swift
+//  EmbedPreventCovidSC.swift
 //  IGListExample
 //
 //  Created by Rohmat Suseno on 29/03/20.
@@ -9,7 +9,7 @@
 import UIKit
 import IGListKit
 
-final class EmbedPreventCovid19SC: ListSectionController {
+final class EmbedPreventCovidSC: ListSectionController {
     
     private var preventCovid: PreventCovid?
     
@@ -18,8 +18,8 @@ final class EmbedPreventCovid19SC: ListSectionController {
     override init() {
         super.init()
         //self.inset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 15)
-        minimumLineSpacing = 20
-        minimumInteritemSpacing = 20
+        minimumLineSpacing = 23
+        //minimumInteritemSpacing = 20
     }
 
     override func numberOfItems() -> Int {
@@ -32,10 +32,10 @@ final class EmbedPreventCovid19SC: ListSectionController {
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
-        guard let cell = collectionContext?.dequeueReusableCell(withNibName: "PreventCovid19Cell",
+        guard let cell = collectionContext?.dequeueReusableCell(withNibName: "HomePreventCovidItemCell",
                                                                 bundle: nil,
                                                                 for: self,
-                                                                at: index) as? PreventCovid19Cell else {
+                                                                at: index) as? HomePreventCovidItemCell else {
                                                                     fatalError()
         }
         cell.icon.backgroundColor = homeMenu?.data[index].icon

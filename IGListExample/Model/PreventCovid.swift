@@ -38,10 +38,10 @@ struct Requirement {
 typealias NewsList = [News]
 
 struct News {
-    let image: UIColor
+    let image: UIImage
     let title: String
     
-    init(image: UIColor, title: String) {
+    init(image: UIImage, title: String) {
         self.image = image
         self.title = title
     }
