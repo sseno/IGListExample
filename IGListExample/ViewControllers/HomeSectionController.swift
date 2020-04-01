@@ -80,7 +80,7 @@ class HomeSectionController: ListSectionController, ListAdapterDataSource {
                                                                         fatalError()
             }
             adapter.collectionView = cell.collectionView
-            cell.titleLabel.text = "Prevent COVID - 19"
+            cell.titleLabel.text = "Prevent COVID-19"
             return cell
         case .requirements:
             guard let cell = collectionContext?.dequeueReusableCell(withNibName: "HomeRequirementsCell",

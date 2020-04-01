@@ -12,7 +12,7 @@ extension UIViewController {
     
     func setNavTitle(withTitle: String) {
         self.navigationItem.title = withTitle
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20), NSAttributedString.Key.foregroundColor: UIColor.black]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20), NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)

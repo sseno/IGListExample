@@ -26,6 +26,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See All" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4L4-6J-xwg">
+                                <rect key="frame" x="203.5" y="22" width="44.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ijP-76-ZAt">
                                 <rect key="frame" x="0.0" y="56" width="268" height="138"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -41,8 +47,10 @@
                         <constraints>
                             <constraint firstItem="ijP-76-ZAt" firstAttribute="top" secondItem="1sO-dm-UdF" secondAttribute="bottom" constant="15" id="5ys-2u-PON"/>
                             <constraint firstAttribute="trailing" secondItem="ijP-76-ZAt" secondAttribute="trailing" id="Mc7-uA-tbS"/>
+                            <constraint firstItem="4L4-6J-xwg" firstAttribute="centerY" secondItem="1sO-dm-UdF" secondAttribute="centerY" id="Qun-Zi-EvH"/>
                             <constraint firstItem="1sO-dm-UdF" firstAttribute="top" secondItem="pUe-tw-5ND" secondAttribute="top" constant="20" id="dSf-6q-cg7"/>
                             <constraint firstItem="ijP-76-ZAt" firstAttribute="leading" secondItem="pUe-tw-5ND" secondAttribute="leading" id="rls-sj-Xfb"/>
+                            <constraint firstAttribute="trailing" secondItem="4L4-6J-xwg" secondAttribute="trailing" constant="20" id="stk-6V-KAv"/>
                             <constraint firstAttribute="bottom" secondItem="ijP-76-ZAt" secondAttribute="bottom" id="wfx-90-pRB"/>
                             <constraint firstItem="1sO-dm-UdF" firstAttribute="leading" secondItem="pUe-tw-5ND" secondAttribute="leading" constant="20" id="zeS-Cr-xkT"/>
                         </constraints>

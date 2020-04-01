@@ -17,15 +17,18 @@ class HomeViewController: UIViewController, ListAdapterDataSource {
     }()
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
+    private let hamburgerButton = UIButton(type: .custom)
+    private let userProfileButton = UIButton(type: .custom)
+    
     var vm = HomeViewModel()
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,15 +38,26 @@ class HomeViewController: UIViewController, ListAdapterDataSource {
     
     private func setupView() {
         setupNavBar()
-        collectionView.backgroundColor = .yellow
+        //collectionView.backgroundColor = .yellow
         innerView.addSubview(collectionView)
         adapter.collectionView = self.collectionView
         adapter.dataSource = self
+        adapter.scrollViewDelegate = self
     }
     
     private func setupNavBar() {
         setNavTitle(withTitle: "")
         self.navigationController?.navigationBar.barTintColor = UIColor.init(named: "BluePrimary")
+        // Left bar button item
+        hamburgerButton.setImage(R.image.ic_hamburger_white(), for: .normal)
+        hamburgerButton.addTarget(self, action: #selector(didClickHamburgerButton), for: .touchUpInside)
+        let hamburgerButtonItem = UIBarButtonItem(customView: hamburgerButton)
+        self.navigationItem.leftBarButtonItem = hamburgerButtonItem
+        // Right bar button item
+        userProfileButton.setImage(R.image.ic_user_placeholder(), for: .normal)
+        userProfileButton.addTarget(self, action: #selector(didClickHamburgerButton), for: .touchUpInside)
+        let userProfileButtonItem = UIBarButtonItem(customView: userProfileButton)
+        self.navigationItem.rightBarButtonItem = userProfileButtonItem
         // Hide underline
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -64,5 +78,25 @@ class HomeViewController: UIViewController, ListAdapterDataSource {
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
         return nil
+    }
+    
+    @objc func didClickHamburgerButton() {
+        print("clicked")
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+extension HomeViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == collectionView {
+            let navbarChangePoint: CGFloat = 37.0
+            let offsetY = scrollView.contentOffset.y
+            if (offsetY > navbarChangePoint) {
+                setNavTitle(withTitle: NSLocalizedString("Prevent COVID-19", comment: ""))
+            } else {
+                setNavTitle(withTitle: "")
+            }
+        }
     }
 }

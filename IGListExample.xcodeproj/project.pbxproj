@@ -145,6 +145,8 @@
 		6987FA15242EFB500090E206 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				69E810682433B0B400CA3F90 /* Detail */,
+				69E810672433B0AC00CA3F90 /* Home */,
 				69EFD2B2242FADF400D66148 /* HomeViewController.swift */,
 				69EFD2B3242FADF400D66148 /* HomeViewController.xib */,
 				69CB2ADF243020CD00CA6B82 /* HomeSectionController.swift */,
@@ -188,6 +190,20 @@
 				69E810612433037300CA3F90 /* HomeNewsItemCell.xib */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		69E810672433B0AC00CA3F90 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		69E810682433B0B400CA3F90 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		FF7A0E019D3953EDFCDB0272 /* Pods */ = {

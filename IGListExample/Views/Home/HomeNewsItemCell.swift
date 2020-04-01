@@ -17,26 +17,12 @@ class HomeNewsItemCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
-        //setupGradientLayer()
     }
     
     private func setupView() {
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
     }
-    
-//    fileprivate func setupGradientLayer() {
-//        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-//        gradientLayer.locations = [0.2,1]
-//        layer.cornerRadius = 8
-//        clipsToBounds = true
-//        gradientView.layer.addSublayer(gradientLayer)
-//    }
-//
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//        gradientLayer.frame = bounds
-//    }
 }
 
 @IBDesignable class GradientView: UIView {
