@@ -31,8 +31,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 7 images.
+  /// This `R.image` struct is generated, and contains static references to 8 images.
   struct image {
+    /// Image `ic_back_arrow`.
+    static let ic_back_arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_back_arrow")
     /// Image `ic_hamburger_white`.
     static let ic_hamburger_white = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_hamburger_white")
     /// Image `ic_user_placeholder`.
@@ -47,6 +49,11 @@ struct R: Rswift.Validatable {
     static let img_covid4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "img_covid4")
     /// Image `img_covid5`.
     static let img_covid5 = Rswift.ImageResource(bundle: R.hostingBundle, name: "img_covid5")
+    
+    /// `UIImage(named: "ic_back_arrow", bundle: ..., traitCollection: ...)`
+    static func ic_back_arrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_back_arrow, compatibleWith: traitCollection)
+    }
     
     /// `UIImage(named: "ic_hamburger_white", bundle: ..., traitCollection: ...)`
     static func ic_hamburger_white(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -86,7 +93,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 8 nibs.
   struct nib {
     /// Nib `HomeNewsCell`.
     static let homeNewsCell = _R.nib._HomeNewsCell()
@@ -102,6 +109,8 @@ struct R: Rswift.Validatable {
     static let homeRequirementsCell = _R.nib._HomeRequirementsCell()
     /// Nib `HomeViewController`.
     static let homeViewController = _R.nib._HomeViewController()
+    /// Nib `NewsDetailHeaderCell`.
+    static let newsDetailHeaderCell = _R.nib._NewsDetailHeaderCell()
     
     /// `UINib(name: "HomeNewsCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.homeNewsCell) instead")
@@ -145,6 +154,12 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.homeViewController)
     }
     
+    /// `UINib(name: "NewsDetailHeaderCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.newsDetailHeaderCell) instead")
+    static func newsDetailHeaderCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.newsDetailHeaderCell)
+    }
+    
     static func homeNewsCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HomeNewsCell? {
       return R.nib.homeNewsCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HomeNewsCell
     }
@@ -171,6 +186,10 @@ struct R: Rswift.Validatable {
     
     static func homeViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.homeViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+    
+    static func newsDetailHeaderCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NewsDetailHeaderCell? {
+      return R.nib.newsDetailHeaderCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NewsDetailHeaderCell
     }
     
     fileprivate init() {}
@@ -291,6 +310,17 @@ struct _R: Rswift.Validatable {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _NewsDetailHeaderCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "NewsDetailHeaderCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NewsDetailHeaderCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NewsDetailHeaderCell
       }
       
       fileprivate init() {}

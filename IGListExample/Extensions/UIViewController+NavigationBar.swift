@@ -10,9 +10,9 @@ import UIKit
 
 extension UIViewController {
     
-    func setNavTitle(withTitle: String) {
+    func setNavTitle(withTitle: String, titleColor: UIColor = .white) {
         self.navigationItem.title = withTitle
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20), NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20), NSAttributedString.Key.foregroundColor: titleColor]
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)

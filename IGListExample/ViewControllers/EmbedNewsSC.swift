@@ -36,6 +36,12 @@ final class EmbedNewsSC: ListSectionController {
         return cell
     }
     
+    override func didSelectItem(at index: Int) {
+        let vc = NewsDetailVC()
+        vc.data = data?[number ?? 0]
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     override func didUpdate(to object: Any) {
         number = object as? Int
     }

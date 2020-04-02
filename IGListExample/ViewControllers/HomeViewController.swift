@@ -9,7 +9,7 @@
 import UIKit
 import IGListKit
 
-class HomeViewController: UIViewController, ListAdapterDataSource {
+class HomeViewController: BaseViewController, ListAdapterDataSource {
 
     @IBOutlet weak var innerView: UIView!
     lazy var adapter: ListAdapter = {
@@ -31,14 +31,19 @@ class HomeViewController: UIViewController, ListAdapterDataSource {
         setupView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavBar()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController?.navigationBar.barStyle = .black
+        //self.navigationController?.navigationBar.barStyle = .black
     }
     
     private func setupView() {
-        setupNavBar()
-        //collectionView.backgroundColor = .yellow
+        setNavTitle(withTitle: "")
+        collectionView.backgroundColor = .white
         innerView.addSubview(collectionView)
         adapter.collectionView = self.collectionView
         adapter.dataSource = self
@@ -46,7 +51,8 @@ class HomeViewController: UIViewController, ListAdapterDataSource {
     }
     
     private func setupNavBar() {
-        setNavTitle(withTitle: "")
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20), NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.barTintColor = UIColor.init(named: "BluePrimary")
         // Left bar button item
         hamburgerButton.setImage(R.image.ic_hamburger_white(), for: .normal)
