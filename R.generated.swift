@@ -31,12 +31,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 8 images.
+  /// This `R.image` struct is generated, and contains static references to 9 images.
   struct image {
     /// Image `ic_back_arrow`.
     static let ic_back_arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_back_arrow")
     /// Image `ic_hamburger_white`.
     static let ic_hamburger_white = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_hamburger_white")
+    /// Image `ic_more_share`.
+    static let ic_more_share = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_more_share")
     /// Image `ic_user_placeholder`.
     static let ic_user_placeholder = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_user_placeholder")
     /// Image `img_covid1`.
@@ -58,6 +60,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "ic_hamburger_white", bundle: ..., traitCollection: ...)`
     static func ic_hamburger_white(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_hamburger_white, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "ic_more_share", bundle: ..., traitCollection: ...)`
+    static func ic_more_share(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_more_share, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "ic_user_placeholder", bundle: ..., traitCollection: ...)`

@@ -22,6 +22,7 @@
 		6987FA09242EF86A0090E206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6987FA08242EF86A0090E206 /* Assets.xcassets */; };
 		6987FA0C242EF86A0090E206 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6987FA0A242EF86A0090E206 /* LaunchScreen.storyboard */; };
 		6987FA18242F12040090E206 /* UIViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987FA17242F12040090E206 /* UIViewController+NavigationBar.swift */; };
+		6997E7142436F2FB004D7F26 /* UIBarButtonItem+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6997E7132436F2FB004D7F26 /* UIBarButtonItem+Button.swift */; };
 		69CB2AE0243020CD00CA6B82 /* HomeSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB2ADF243020CD00CA6B82 /* HomeSectionController.swift */; };
 		69CB2AE2243026CF00CA6B82 /* EmbedPreventCovidSC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB2AE1243026CF00CA6B82 /* EmbedPreventCovidSC.swift */; };
 		69CB2AE72430282100CA6B82 /* HomePreventCovidItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB2AE52430282100CA6B82 /* HomePreventCovidItemCell.swift */; };
@@ -58,6 +59,7 @@
 		6987FA0B242EF86A0090E206 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6987FA0D242EF86A0090E206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6987FA17242F12040090E206 /* UIViewController+NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBar.swift"; sourceTree = "<group>"; };
+		6997E7132436F2FB004D7F26 /* UIBarButtonItem+Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Button.swift"; sourceTree = "<group>"; };
 		69CB2ADF243020CD00CA6B82 /* HomeSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionController.swift; sourceTree = "<group>"; };
 		69CB2AE1243026CF00CA6B82 /* EmbedPreventCovidSC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbedPreventCovidSC.swift; sourceTree = "<group>"; };
 		69CB2AE52430282100CA6B82 /* HomePreventCovidItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePreventCovidItemCell.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				6987FA17242F12040090E206 /* UIViewController+NavigationBar.swift */,
+				6997E7132436F2FB004D7F26 /* UIBarButtonItem+Button.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				69E810622433037300CA3F90 /* HomeNewsItemCell.swift in Sources */,
 				693456CF2435D56C00255BDB /* NewsDetailHeaderCell.swift in Sources */,
 				6987FA02242EF8640090E206 /* SceneDelegate.swift in Sources */,
+				6997E7142436F2FB004D7F26 /* UIBarButtonItem+Button.swift in Sources */,
 				69E810662433088500CA3F90 /* R.generated.swift in Sources */,
 				69E8105D243302E400CA3F90 /* EmbedNewsSC.swift in Sources */,
 				693456CB2435C94900255BDB /* NewsDetailVC.swift in Sources */,

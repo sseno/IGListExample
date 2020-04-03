@@ -34,11 +34,6 @@ class NewsDetailVC: BaseViewController {
         setupNavBar()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        //self.navigationController?.navigationBar.barStyle = .default
-    }
-    
     private func setupView() {
         self.view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -54,10 +49,12 @@ class NewsDetailVC: BaseViewController {
         self.navigationController?.navigationBar.barStyle = .default
         setNavTitle(withTitle: "News", titleColor: .black)
         self.navigationController?.navigationBar.barTintColor = .white
-        // Left bar button item
-        backButton.setImage(R.image.ic_back_arrow(), for: .normal)
-        backButton.addTarget(self, action: #selector(didClickBackButton), for: .touchUpInside)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+        setupLeftBackBarButtonItems(barButtonType: .backButton)
+        setupRightBackBarButtonItems(barButtonType: .shareButton)
+    }
+    
+    deinit {
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
 }
 
