@@ -100,7 +100,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 8 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 9 nibs.
   struct nib {
     /// Nib `HomeNewsCell`.
     static let homeNewsCell = _R.nib._HomeNewsCell()
@@ -118,6 +118,8 @@ struct R: Rswift.Validatable {
     static let homeViewController = _R.nib._HomeViewController()
     /// Nib `NewsDetailHeaderCell`.
     static let newsDetailHeaderCell = _R.nib._NewsDetailHeaderCell()
+    /// Nib `NewsFooterView`.
+    static let newsFooterView = _R.nib._NewsFooterView()
     
     /// `UINib(name: "HomeNewsCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.homeNewsCell) instead")
@@ -167,6 +169,12 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.newsDetailHeaderCell)
     }
     
+    /// `UINib(name: "NewsFooterView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.newsFooterView) instead")
+    static func newsFooterView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.newsFooterView)
+    }
+    
     static func homeNewsCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HomeNewsCell? {
       return R.nib.homeNewsCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HomeNewsCell
     }
@@ -197,6 +205,10 @@ struct R: Rswift.Validatable {
     
     static func newsDetailHeaderCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NewsDetailHeaderCell? {
       return R.nib.newsDetailHeaderCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NewsDetailHeaderCell
+    }
+    
+    static func newsFooterView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NewsFooterView? {
+      return R.nib.newsFooterView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NewsFooterView
     }
     
     fileprivate init() {}
@@ -237,6 +249,7 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _HomeNewsItemCell.validate()
+      try _NewsFooterView.validate()
     }
     
     struct _HomeNewsCell: Rswift.NibResourceType {
@@ -328,6 +341,25 @@ struct _R: Rswift.Validatable {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NewsDetailHeaderCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NewsDetailHeaderCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _NewsFooterView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "NewsFooterView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NewsFooterView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NewsFooterView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "bookmark.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'bookmark.fill' is used in nib 'NewsFooterView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "heart.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'heart.fill' is used in nib 'NewsFooterView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "square.and.pencil", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'square.and.pencil' is used in nib 'NewsFooterView', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
       }
       
       fileprivate init() {}

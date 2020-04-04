@@ -10,8 +10,6 @@ import UIKit
 
 class NewsDetailVC: BaseViewController {
     
-    private let backButton = UIButton(type: .custom)
-    
     private lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.dataSource = self
@@ -21,11 +19,14 @@ class NewsDetailVC: BaseViewController {
         return tv
     }()
     
+    private var footerView: NewsFooterView!
+    
     var data: News?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initSwipeToBack()
+        setupFooterView()
         setupView()
     }
     
@@ -41,7 +42,7 @@ class NewsDetailVC: BaseViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.bottomAnchor.constraint(equalTo: footerView.topAnchor),
         ])
     }
     
@@ -51,6 +52,18 @@ class NewsDetailVC: BaseViewController {
         self.navigationController?.navigationBar.barTintColor = .white
         setupLeftBackBarButtonItems(barButtonType: .backButton)
         setupRightBackBarButtonItems(barButtonType: .shareButton)
+    }
+    
+    private func setupFooterView() {
+        footerView = UINib(nibName: "NewsFooterView", bundle: nil).instantiate(withOwner: nil, options: nil).first as? NewsFooterView
+        view.addSubview(footerView)
+        footerView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            footerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            footerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            footerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            footerView.heightAnchor.constraint(equalToConstant: 70),
+        ])
     }
     
     deinit {
