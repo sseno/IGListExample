@@ -10,9 +10,12 @@ import UIKit
 
 extension UIBarButtonItem {
     
-    static func menuButton(_ target: Any?, action: Selector?, image: UIImage?, width:CGFloat) -> UIBarButtonItem {
+    static func menuButton(_ target: Any?, action: Selector?, image: UIImage?, width:CGFloat, isCustomColor: Bool = false, color: UIColor = .black) -> UIBarButtonItem {
         let button = UIButton(type: .custom)
         button.setImage(image, for: .normal)
+        if isCustomColor {
+            button.tintColor = color
+        }
         if let selectorAction = action {
             button.addTarget(target, action: selectorAction, for: .touchUpInside)
         }

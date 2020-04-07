@@ -47,4 +47,10 @@ final class EmbedPreventCovidSC: ListSectionController {
     override func didUpdate(to object: Any) {
         self.preventCovid = object as? PreventCovid
     }
+    
+    override func didSelectItem(at index: Int) {
+        let vc = PreventCovidVC()
+        vc.title = homeMenu?.data[index].title
+        self.viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

@@ -12,6 +12,7 @@ enum BarButtonItemType {
     
     case hamburgerMenu
     case backButton
+    case backButtonWhite
     case closeButton
     case titleButtonModal
     case iconButton
@@ -37,6 +38,12 @@ class BaseViewController: UIViewController {
         return backBarButtonItem
     }
     
+    func createBackBarWhiteButtonItem() -> UIBarButtonItem {
+        let backButtonImage = R.image.ic_back_arrow()?.withRenderingMode(.alwaysTemplate)
+        let backBarButtonItem = UIBarButtonItem.menuButton(self, action: #selector(self.didClickBackButton), image: backButtonImage, width: 30, isCustomColor: true, color: .white)
+        return backBarButtonItem
+    }
+    
     func createIconBarButtonItem() -> UIBarButtonItem {
            let iconButtonImage = R.image.ic_user_placeholder()
            let iconBarButtonItem = UIBarButtonItem.menuButton(self, action: #selector(self.didClickShareButton), image: iconButtonImage, width: 30)
@@ -54,6 +61,8 @@ class BaseViewController: UIViewController {
         switch type {
         case .hamburgerMenu:
             barButtonItem = createHamburgerBarButtonItem()
+        case .backButtonWhite:
+            barButtonItem = createBackBarWhiteButtonItem()
         default:
             barButtonItem = createBackBarButtonItem()
         }

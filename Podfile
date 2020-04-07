@@ -10,6 +10,6 @@ target 'IGListExample' do
   # Base
   pod 'R.swift',              '5.0.0'
   pod 'SnapKit',              '~> 5.0.0'
-  pod 'IGListKit',	      '~> 4.0.0'
+  pod 'IGListKit',	          '~> 4.0.0'
 
 end
